@@ -1,1 +1,39 @@
+#!name=自用广告重写
+#!desc=广告重写
+[MITM] 
+hostname = %APPEND% v.icbc.com.cn, ad.12306.cn, heic.alicdn.com, acs.m.taobao.com, app.zhuanzhuan.com, adproxy.autohome.com, m*.amap.com
 
+
+[URL Rewrite]
+# > 中国工商银行
+#^https?+:\/\/v\.icbc\.com\.cn\/userfiles\/Resources\/WAP\/advertisement\/ - reject
+# > 12306
+^https?:\/\/ad\.12306\.cn\/ - reject
+# > 淘宝
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome\/ - reject
+^https?+:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.tmall\.wireless - reject
+^https?+:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject
+^https?+:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/ - response-body "ems_etao_advertise" response-body ""
+^https?+:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise\/ - reject
+^https?+:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get\/ - reject
+^https?+:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources\/ - reject
+# > 闲鱼
+^https?+:\/\/gw\.alicdn\.com\/tfs\/.+?\d{4}-\d{4}\/[a-z]{3}$ - reject
+^https?+:\/\/gw\.alicdn\.com\/tfs\/TB1.+?750-\d{4} - reject
+^https?+:\/\/heic\.alicdn\.com\/tps\/i4\/.+?\.jpg_1200x1200q90\.jpg_\.heic$ - reject
+^https?+:\/\/asp\.cntv\.myalicdn\.com\/.+?\?maxbr=850 - reject
+^https?+:\/\/(?>heic|gw)\.alicdn\.com\/tfs\/TB1.+?-\d{4}-\d{4}\.jpg_1200x1200q90\.jpg_\.\w{3,4}+$ - reject
+^https?:\/\/(gw|heic)\.alicdn\.com\/\w{2}s\/[\w\/.-]+\.jpg_(9\d{2}|\d{4}) - reject
+^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/\w{2}\/[\w!]+-\d-tps-\d{3,4}-\d{4}\.jpg_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q\d0\.jpg_\.(heic|webp)$ - reject
+^https?:\/\/(gw|heic)\.alicdn\.com\/imgextra\/.+\d{4}-\d{4}\.jpg_(9\d{2}|\d{4}) - reject
+^https:\/\/gw.alicdn.com\/mt\/ - reject
+^https:\/\/gw.alicdn.com\/tfs\/.+\d{3,4}-\d{4} - reject
+# > 转转
+^https?:\/\/app\.zhuanzhuan\.com\/zzx\/transfer\/getConfigInfo$ - reject
+# > 汽车之家
+^https?:\/\/adproxy\.autohome\.com\.cn\/AdvertiseService\/ - reject-tinygif
+^https?:\/\/app2\.autoimg\.cn\/apppdfs\/ - reject-tinygif
+# > 高德地图
+^https?+:\/\/m\d\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\/ - reject
+^https?:\/\/m5\.amap\.com\/ws\/valueadded\/ - reject
+^https?:\/\/optimus-ads\.amap\.com\/uploadimg\/ - reject
