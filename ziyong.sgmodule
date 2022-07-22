@@ -69,10 +69,6 @@ hostname = %APPEND% v.icbc.com.cn, ad.12306.cn, heic.alicdn.com, acs.m.taobao.co
 ^https?:\/\/atrace\.chelaile\.net\.cn\/adpub\/ - reject-tinygif
 ^https?:\/\/atrace\.chelaile\.net\.cn\/exhibit\?&adv_image - reject-tinygif
 ^https?:\/\/web\.chelaile\.net\.cn\/api\/adpub\/ - reject
-#> 百度贴吧
-RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.list,REJECT-DROP
-#> 知乎
-RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/zhihu-ad.list,REJECT-DROP
 
 # ＞搜索
 
@@ -210,6 +206,12 @@ RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/zhihu-ad.
 
 
 
+[Rule]
+
+#> 百度贴吧
+RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.list,REJECT-DROP
+#> 知乎
+RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/zhihu-ad.list,REJECT-DROP
 
 
 
