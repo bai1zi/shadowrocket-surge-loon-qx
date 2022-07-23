@@ -4,6 +4,35 @@ const REQUEST_HEADERS = {
     'Accept-Language': 'en',
 }
 
+// 即将登陆
+const STATUS_COMING = 2
+// 支持解锁
+const STATUS_AVAILABLE = 1
+// 不支持解锁
+const STATUS_NOT_AVAILABLE = 0
+// 检测超时
+const STATUS_TIMEOUT = -1
+// 检测异常
+const STATUS_ERROR = -2
+
+function getFlagEmoji(code) {
+  const codePoints = code
+     .toUpperCase()
+    .split('')
+    .map((char) => 127397 + char.charCodeAt());
+  return String.fromCodePoint(...codePoints);
+}
+function getFlagEmoji(region) {
+  const codePoints = region
+     .toUpperCase()
+    .split('')
+    .map((char) => 127397 + char.charCodeAt());
+  return String.fromCodePoint(...codePoints);
+}
+
+const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36'
+
+
   ;(async () => {
     let panel_result = {
       title: '流媒体检测',
@@ -31,65 +60,6 @@ const REQUEST_HEADERS = {
         disney_result="Disney✛: 检测超时 🚦"
       }
 result.push(disney_result)
-console.log(result)
-        let content = result.join('\n')
-        console.log(content)
-
-     
-panel_result['content'] = content
-      })
-      .finally(() => {
-        $done(panel_result)
-      })
-  })()
-  async function check_youtube_premium() {
-    let inner_check = () => {
-      return new Promise((resolve, reject) => {
-        let option = {
-          url: 'https://www.youtube.com/premium',
-          headers: REQUEST_HEADERS,
-        }
-        $httpClient.get(option, function (error, response, data) {
-          if (error != null || response.status !== 200) {
-            reject('Error')
-            return
-          }
-  
-          if (data.indexOf('Premium is not available in your country') !== -1) {
-            resolve('Not Available')
-            return
-          }
-  
-          let region = ''
-          let re = new RegExp('"countryCode":"(.*?)"', 'gm')
-          let result = re.exec(data)
-          if (result != null && result.length === 2) {
-            region = result[1]
-          } else if (data.indexOf('www.google.cn') !== -1) {
-            region = 'CN'
-          } else {
-            region = 'US'
-          }
-          resolve(region)
-        })
-      })
-    }
-  
-    let youtube_check_result = 'YouTube: '
-  
-    await inner_check()
-      .then((code) => {
-        if (code === 'Not Available') {
-          youtube_check_result += '不支持解锁'
-        } else {
-          youtube_check_result += '已解锁，区域: ' + code.toUpperCase()
-        }
-      })
-      .catch((error) => {
-        youtube_check_result += '检测失败，请刷新面板'
-      })
-  
- result.push(disney_result)
 console.log(result)
         let content = result.join('\n')
         console.log(content)
@@ -339,7 +309,8 @@ panel_result['content'] = content
               reject('Error')
               return
             }
-            if (response.status !== 200 || data.indexOf('Sorry, Disney+ is not available in your region.') !== -1) {
+            if (response.status !== 200 || data.indexOf('Sorry, Disney+ is not available in your region.
+') !== -1) {
               reject('Not Available')
               return
             }
