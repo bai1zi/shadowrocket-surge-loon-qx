@@ -222,7 +222,7 @@ hostname = %APPEND% v.icbc.com.cn, ad.12306.cn, heic.alicdn.com, acs.m.taobao.co
 
 #> 知乎
 
- 屏蔽知乎8.3.0版本首页顶部的视频角标
+# 屏蔽知乎8.3.0版本首页顶部的视频角标
 URL-REGEX,^https?:\/\/(api\.zhihu\.com|(103\.41\.167\.(226|234|235|236)))\/explore\/entry\/tips,REJECT-TINYGIF
 # 知乎广告拦截
 RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_remove_ads.list,REJECT-NO-DROP
