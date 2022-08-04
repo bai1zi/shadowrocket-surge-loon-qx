@@ -1,0 +1,8 @@
+[Host]
+iacc*.qq.com = 0.0.0.0
+
+[Script]
+腾讯 = type=http-response,pattern=^https?:\/\/i\.video\.qq\.com\/$,requires-body=1,max-size=0,script-path=Tx.js.js,binary-body-mode=1
+
+[MITM]
+hostname = %APPEND% i.video.qq.com
