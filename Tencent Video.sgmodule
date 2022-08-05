@@ -1,8 +1,8 @@
-[Host]
-iacc*.qq.com = 0.0.0.0
+[Rule]
+AND,((PROTOCOL,HTTPS), (DOMAIN,iacc.qq.com)),REJECT-NO-DROP
 
 [Script]
-腾讯 = type=http-response,pattern=^https?:\/\/i\.video\.qq\.com\/$,requires-body=1,max-size=0,script-path=Tx.js.js,binary-body-mode=1
+腾讯 = type=http-response,pattern=^https?:\/\/i\.video\.qq\.com\/$,requires-body=1,max-size=0,script-path=Tx.js,binary-body-mode=1
 
 [MITM]
 hostname = %APPEND% i.video.qq.com
