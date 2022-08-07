@@ -1,5 +1,7 @@
 #!name=腾讯视频
 #!desc=去除腾讯视频广告
+#需先卸载重装，只保留开屏部分其他全部注释掉，打开app登录账号后关掉，在恢复注释就行，开屏部分需要你自己建立个txt文件随便写个文字后缀在改成mp4，在[Map Local]里选择文件返回，千万不要直接拦截。
+
 [Rule]
 AND,((PROTOCOL,HTTPS), (DOMAIN,iacc.qq.com)),REJECT-NO-DROP
 
