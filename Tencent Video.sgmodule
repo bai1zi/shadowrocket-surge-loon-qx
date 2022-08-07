@@ -1,8 +1,16 @@
+#!name=腾讯视频
+#!desc=去除腾讯视频广告
 [Rule]
 AND,((PROTOCOL,HTTPS), (DOMAIN,iacc.qq.com)),REJECT-NO-DROP
 
+# > 开屏
+[Map Local]
+^http:\/\/(.+\.tc\.qq\.com\/.+mp4|pgdt\.gtimg\.cn) data="1 4.mp4" //自己设置
+
+
 [Script]
-腾讯 = type=http-response,pattern=^https?:\/\/i\.video\.qq\.com\/$,requires-body=1,max-size=0,script-path=Tx.js,binary-body-mode=1
+腾讯 = type=http-request,pattern=^(https:\/\/i\.video|http:\/\/iacc)\.qq\.com\/$,requires-body=0,max-size=0,script-path=Tx.js
+
 
 [MITM]
-hostname = %APPEND% i.video.qq.com
+hostname = %APPEND% i.video.qq.com,iacc.qq.com
