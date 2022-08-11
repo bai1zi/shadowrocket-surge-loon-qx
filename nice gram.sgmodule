@@ -1,0 +1,5 @@
+[Map Local]
+https?:\/\/restore-access\.indream\.app\/restoreAccess\?id=\d{5,10} data="https://github.com/ddgksf2013/Cuttlefish/raw/master/Crack/nicegram_body.js"
+
+[MITM]
+hostname=%APPEND% restore-access.indream.app
