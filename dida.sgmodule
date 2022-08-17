@@ -1,0 +1,6 @@
+#!name=滴答清单
+#!desc=滴答清单
+[Script]
+滴答清单=type=http-response,pattern=^https:\/\/(ticktick|dida365)\.com\/api\/v2\/user\/status,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Voldeemort/Surge/main/script/dida/dida.js,script-update-interval=0
+[MITM]
+hostname = %APPEND% dida365.com, ticktick.com
