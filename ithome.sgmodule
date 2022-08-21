@@ -1,0 +1,11 @@
+#!name=IThome
+#!desc=去除it之家广告
+[Rule]
+URL-REGEX,^https:\/\/api\.zuihuimai\.com,REJECT
+[Script]
+# > IT之家 去广告
+页面广告 = type=http-response,pattern=^https:\/\/m\.ithome\.com\/api\/news\/newslistpageget,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/ithome/ithome.ad.js,script-update-interval=0
+列表广告 = type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/api\.ithome\.com\/json\/(listpage|newslist)\/news,script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/ithome/ithome.ad.js,script-update-interval=0
+轮播广告 = type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/api\.ithome\.com\/json\/slide\/index,script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/ithome/ithome.ad.js,script-update-interval=0
+[MITM]
+hostname %APPEND% api.ithome,m.ithome.com
