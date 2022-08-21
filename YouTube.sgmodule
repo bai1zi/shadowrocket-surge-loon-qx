@@ -1,0 +1,8 @@
+!name=youtube
+#!desc= 去除视频开头广告
+[Script]
+油管 = type=http-request,pattern=^https?:\/\/.+?\.googlevideo\.com\/.+&(oad|ctier=L),requires-body=0,script-path=youtube.js
+
+
+[MITM]
+hostname = %APPEND% *.googlevideo.com
