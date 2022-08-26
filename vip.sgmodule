@@ -20,5 +20,4 @@ grow解锁 = type=http-response,pattern=https:\/\/api\.revenuecat\.com,requires-
 # > 泼辣修图 解锁
 泼辣修图 = type=http-response,pattern=^https:\/\/api\.polaxiong\.com\/v1\/payments\/appleiap\/receipts\/confirmation,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Polarr.js
 [MITM]
-hostname=%APPEND% *account.wps.cn, *account.wps.com,ap*.intsig.net,biz.caiyunapp.com,
-pan.baidu.com,bmall.camera360.com,vsco.co,api.polaxiong.com
+hostname=%APPEND%*account.wps.cn,*account.wps.com,ap*.intsig.net,biz.caiyunapp.com,pan.baidu.com,bmall.camera360.com,vsco.co,api.polaxiong.com
