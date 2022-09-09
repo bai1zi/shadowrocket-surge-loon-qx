@@ -1,0 +1,26 @@
+#!name=dns
+#!desc=dns汉化
+#!system=ios
+[URL Rewrite]
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?bdiff-data.json http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=bdiff-data.json 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?resource-data.json http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=resource-data.json 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/patch_list.bytes http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=patch_list.bytes 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/script_compressed_kor_sh.bytes http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=script_compressed_kor_sh.bytes 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/script_compressed_kor_55_55_u_p.bytes http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=script_compressed_kor_55_55_u_p.bytes 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_hud_townhudm7.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_hud_townhudm7.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_contents_worldmapwindowarea.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_contents_worldmapwindowarea.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_scene_worldmapwindow.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_scene_worldmapwindow.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_contents_worldmapwindowtown.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_contents_worldmapwindowtown.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_common.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_common.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_scene_login.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_scene_login.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_scene_dungeoneplpui.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_scene_dungeoneplpui.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_scene_rinventorywindow.unity.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_scene_rinventorywindow.unity.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_scene_townhudbuttonui.unity.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_scene_townhudbuttonui.unity.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_scene_stageselectwindow.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_scene_stageselectwindow.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_contents_magicallockwindow.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_contents_magicallockwindow.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_scene_welfaremainwindow.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_scene_welfaremainwindow.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_atlas_scene_minigamelotterypopupui.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_atlas_scene_minigamelotterypopupui.npk 302
+^https:\/\/mdnf.dn.nexoncdn.co.kr.*?patch_main/bundles/ui_scene_characterstatusinfopopupui.unity.npk http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=ui_scene_characterstatusinfopopupui.unity.npk 302
+
+[MITM]
+hostname = %APPEND% mdnf.dn.nexoncdn.co.kr
