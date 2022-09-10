@@ -1,0 +1,7 @@
+#!name= notability
+#!desc= notability解锁
+[MITM]
+hostname = %APPEND% notability.com
+
+[Script]
+Notability=type=http-response,pattern=^https://notability.com/subscriptions,requires-body=1,script-path=https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/notability.js
