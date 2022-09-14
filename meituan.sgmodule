@@ -1,0 +1,7 @@
+#!name=美团
+#!desc=去除美团广告
+#!system=ios
+[Rule]
+URL-REGEX,^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4),REJECT
+[MITM]
+%APPEND% flowplus.meituan.net
