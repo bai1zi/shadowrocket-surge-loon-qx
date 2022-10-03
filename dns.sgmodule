@@ -1,5 +1,5 @@
-#!name=dns
-#!desc=dns汉化
+#!name=dnf
+#!desc=dnf汉化
 #!system=ios
 [URL Rewrite]
 ^https:\/\/mdnf.dn.nexoncdn.co.kr.*?bdiff-data.json http://un.yusuijun.ga:5201/down/0qeyjl4kCL52?fname=bdiff-data.json 302
