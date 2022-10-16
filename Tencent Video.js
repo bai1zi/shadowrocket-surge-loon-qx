@@ -11,8 +11,14 @@ AND,((PROTOCOL,HTTPS), (DOMAIN,iacc.qq.com)),REJECT-NO-DROP
 
 
 [Script]
-腾讯 = type=http-request,pattern=^(https:\/\/i\.video|http:\/\/iacc)\.qq\.com\/$,requires-body=0,max-size=0,script-path=Tx.js
+腾讯 = type=http-request,pattern=^(https:\/\/i\.video|http:\/\/iacc)\.qq\.com\/$,requires-body=0,max-size=0,script-path=
 
 
 [MITM]
 hostname = %APPEND% i.video.qq.com,iacc.qq.com
+
+
+#****
+let size = ($request.headers["content-length"] || $request.headers["Content-Length"]  );
+if(size < 1500){$done();}
+$done({});
