@@ -9,9 +9,15 @@ URL-REGEX,^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player\/ad_break\?
 
 
 [Script]
-/油管 = type=http-request,pattern=googlevideo\.com\/.+ctier=L,requires-body=0,script-path=youtube.
+/油管 = type=http-request,pattern=googlevideo\.com\/.+ctier=L,requires-body=0,script-path=
 
 
 
 [MITM]
 hostname = %APPEND% r*.googlevideo.com,youtubei.googleapis.com
+
+
+
+
+#*****
+$done({ response: {status: 408} });
