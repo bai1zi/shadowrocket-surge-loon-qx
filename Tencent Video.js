@@ -11,7 +11,7 @@ AND,((PROTOCOL,HTTPS), (DOMAIN,iacc.qq.com)),REJECT-NO-DROP
 
 
 [Script]
-腾讯 = type=http-request,pattern=^(https:\/\/i\.video|http:\/\/iacc)\.qq\.com\/$,requires-body=0,max-size=0,script-path=
+腾讯 = type=http-request,pattern=^(https:\/\/i\.video|http:\/\/iacc)\.qq\.com\/$,requires-body=0,max-size=0,script-path= https://raw.githubusercontent.com/bai1zi/shadowrocket-surge-loon-qx/main/Tencent%20Video.js
 
 
 [MITM]
