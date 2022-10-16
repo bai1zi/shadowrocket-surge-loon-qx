@@ -9,7 +9,7 @@ URL-REGEX,^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player\/ad_break\?
 
 
 [Script]
-/油管 = type=http-request,pattern=googlevideo\.com\/.+ctier=L,requires-body=0,script-path=
+/油管 = type=http-request,pattern=googlevideo\.com\/.+ctier=L,requires-body=0,script-path= https://raw.githubusercontent.com/bai1zi/shadowrocket-surge-loon-qx/main/YouTubeAd.js
 
 
 
