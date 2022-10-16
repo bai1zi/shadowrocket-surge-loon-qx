@@ -1,14 +1,15 @@
 #!name=youtube（改）
 #!desc= 测试
 #作者小白脸佬
+
 [Rule]
-URL-REGEX,^https?:\/\/.+?\.googlevideo\.com\/.+&oda,REJECT-TINYGIF
+URL-REGEX,googlevideo\.com\/.+&oad,REJECT-TINYGIF
 URL-REGEX,^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player\/ad_break\?key,REJECT-TINYGIF
 
 
 
 [Script]
-/油管 = type=http-request,pattern=^https?:\/\/.+?\.googlevideo\.com\/.+ctier=L,requires-body=0,script-path=youtube.js
+/油管 = type=http-request,pattern=googlevideo\.com\/.+ctier=L,requires-body=0,script-path=youtube.
 
 
 
